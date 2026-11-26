@@ -1,0 +1,7 @@
+spec_version: 0.3.0
+settings:
+  explicit_type_keys: [ "@type" ]
+  bases_folder: _terminus/bases
+  document_path: "{type}/{filename}"
+  forms_folder: _terminus/forms
+  types_folder: _terminus/types

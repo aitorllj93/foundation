@@ -1,0 +1,59 @@
+icon: files
+accent: mauve
+description: Sample views to display any kind of documents
+filters:
+  and:
+    - '!file.folder.startsWith("_")'
+formulas:
+  displayName: if(note["name"], note["name"], file.name)
+properties:
+  formula.displayName:
+    displayName: Name
+views:
+
+  - type: table
+    name: All
+    order:
+      - formula.displayName
+      - tags
+    icon: files
+
+  - type: table
+    name: Articles
+    icon: "stash:article-alt-light"
+    accent: blue
+    filters:
+      and:
+        - list(note["@type"]).contains("Article")
+    order:
+      - formula.displayName
+
+  - type: table
+    name: Things
+    icon: "carbon:object"
+    accent: mauve
+    filters:
+      and:
+        - list(note["@type"]).contains("Thing")
+    order:
+      - formula.displayName
+
+  - type: table
+    name: Defined Terms
+    icon: "carbon:term"
+    accent: mauve
+    filters:
+      and:
+        - list(note["@type"]).contains("DefinedTerm")
+    order:
+      - formula.displayName
+
+  - type: table
+    name: Defined Term Sets
+    icon: "carbon:term-reference"
+    accent: mauve
+    filters:
+      and:
+        - list(note["@type"]).contains("DefinedTermSet")
+    order:
+      - formula.displayName
