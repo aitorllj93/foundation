@@ -29,6 +29,16 @@ schema:
         type: array
         items:
           type: string
+      containedInPlace:
+        description: "The basic containment relation between a place and one that contains it. Inverse property: containsPlace"
+        type: array
+        items:
+          type: string
+      containsPlace:
+        description: "The basic containment relation between a place and another that it contains. Inverse property: containsPlace"
+        type: array
+        items:
+          type: string
       description:
         description: A description of the item.
         type: string

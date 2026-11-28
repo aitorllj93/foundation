@@ -39,6 +39,16 @@ schema:
         type: array
         items:
           type: string
+      containedInPlace:
+        description: "The basic containment relation between a place and one that contains it. Inverse property: containsPlace"
+        type: array
+        items:
+          type: string
+      containsPlace:
+        description: "The basic containment relation between a place and another that it contains. Inverse property: containsPlace"
+        type: array
+        items:
+          type: string
       department:
         description: "A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe."
         type: array
